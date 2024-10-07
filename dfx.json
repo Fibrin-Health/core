@@ -1,0 +1,27 @@
+{
+  "canisters": {
+    "fibrin_health_backend": {
+      "candid": "src/fibrin_health_backend/fibrin_health_backend.did",
+      "package": "fibrin_health_backend",
+      "type": "rust"
+    },
+    "fibrin_health_frontend": {
+      "dependencies": [
+        "fibrin_health_backend"
+      ],
+      "source": [
+        "src/fibrin_health_frontend/dist"
+      ],
+      "type": "assets",
+      "workspace": "fibrin_health_frontend"
+    }
+  },
+  "defaults": {
+    "build": {
+      "args": "",
+      "packtool": ""
+    }
+  },
+  "output_env_file": ".env",
+  "version": 1
+}
