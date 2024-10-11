@@ -1,25 +1,17 @@
-# `fibrin_health`
+# Fbrin Health - Decentralized EHR and AI Second Opinion Platform
 
-Welcome to your new `fibrin_health` project and to the Internet Computer development community. By default, creating a new project adds this README and some template files to your project directory. You can edit these template files to customize your project and to include your own code to speed up the development cycle.
+Fibrin Lab is a fully decentralized, Web3-enabled Electronic Health Record (EHR) system built on the Internet Computer (IC) Protocol. It allows healthcare providers to securely access patient records directly from the blockchain via HTTP calls, while patients retain full ownership of their data.
 
-To get started, you might want to explore the project directory structure and the default configuration file. Working with this project in your development environment will not affect any production deployment or identity tokens.
+By integrating AI-powered diagnostic tools, doctors can also request second opinions based on clinical guidelines and medical research, all within a decentralized framework. Fibrin Lab leverages the IC Protocol's scalable infrastructure to ensure security, privacy, and seamless real-time access to health data.
 
-To learn more before you start working with `fibrin_health`, see the following documentation available online:
 
-- [Quick Start](https://internetcomputer.org/docs/current/developer-docs/setup/deploy-locally)
-- [SDK Developer Tools](https://internetcomputer.org/docs/current/developer-docs/setup/install)
-- [Rust Canister Development Guide](https://internetcomputer.org/docs/current/developer-docs/backend/rust/)
-- [ic-cdk](https://docs.rs/ic-cdk)
-- [ic-cdk-macros](https://docs.rs/ic-cdk-macros)
-- [Candid Introduction](https://internetcomputer.org/docs/current/developer-docs/backend/candid/)
+## Key Features
 
-If you want to start working on your project right away, you might want to try the following commands:
 
-```bash
-cd fibrin_health/
-dfx help
-dfx canister --help
-```
+## Development Roadmap
+
+
+
 
 ## Running the project locally
 

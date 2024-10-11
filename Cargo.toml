@@ -1,5 +1,6 @@
 [workspace]
 members = [
-    "src/fibrin_health_backend"
+    "src/fibrin_health_backend",
+    "src/middleware"
 ]
 resolver = "2"
