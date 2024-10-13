@@ -1,8 +1,8 @@
-# Fbrin Health - Decentralized Healthcare Data Storage Protocol on Internet Computer
+# Fbrin Health - Decentralised Healthcare Data Storage Protocol on Internet Computer
 
 ## Overview
 
-Fibrin Health is a decentralized protocol for securely storing and managing healthcare data using the Internet Computer (IC). This project consists of two main components:
+Fibrin Health is a decentralised protocol for securely storing and managing healthcare data using the Internet Computer (IC). This project consists of two main components:
 
   1. API Gateway (Rust): A bridge between external systems (e.g., healthcare providers' EHR systems) and the backend canisters.
   2. Fibrin Health Backend Canister: Handles the secure storage, management, and permissions for patient healthcare data.
@@ -11,7 +11,7 @@ Fibrin Health is a decentralized protocol for securely storing and managing heal
 
 ## API Gateway (Rust)
 
-The API Gateway is responsible for processing HTTP requests from external systems and forwarding them to the appropriate backend canister. It acts as the interface for healthcare providers and ensures secure communication between external systems and Fibrin Health’s decentralized infrastructure.
+The API Gateway is responsible for processing HTTP requests from external systems and forwarding them to the appropriate backend canister. It acts as the interface for healthcare providers and ensures secure communication between external systems and Fibrin Health’s decentralised infrastructure.
 
 ### Key Features:
 
@@ -31,14 +31,14 @@ The backend canister is the core of the Fibrin Health system. It stores patient 
 
 ### Key Features:
 
-    Decentralized Storage: Stores encrypted healthcare data for patients in a secure, decentralized manner.
+    Decentralised Storage: Stores encrypted healthcare data for patients in a secure, decentralised manner.
     Permissions Management: Patients control who can access their data through smart contract-based permissions.
     Data Sync: Automatically syncs with local EHR systems when patients move or visit new healthcare providers.
 
 ### Usage:
 
     Deploy backend canisters for each patient to store and manage their healthcare data.
-    Manage access control using smart contracts to authorize healthcare providers.
+    Manage access control using smart contracts to authorise healthcare providers.
 
 
 
