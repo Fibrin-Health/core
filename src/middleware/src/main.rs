@@ -4,10 +4,13 @@ pub use self::error::{Error, Result};
 
 use std::net::SocketAddr;
 use axum::extract::{Path, Query};
+use axum::http::{Method, Uri};
 use axum::middleware::from_fn_with_state;
 use axum::response::{Html, IntoResponse, Response};
 use axum::{middleware, Json, Router};
 use axum::routing::{get, get_service};
+use ctx::Ctx;
+use log::log_request;
 use model::ModelController;
 use serde_json::json;
 use tower_cookies::{CookieManager, CookieManagerLayer};
@@ -24,7 +27,7 @@ mod log;
 async fn main() -> Result<()> {
     let mc = ModelController::new().await?;
 
-    let routes_apis = web::routes_tickets::routes(mc.clone())
+    let routes_apis = web::routes_ehr::routes(mc.clone())
         .route_layer(middleware::from_fn(web::mw_auth::mw_require_auth));
 
     let routes_all = Router::new()
@@ -52,7 +55,12 @@ async fn main() -> Result<()> {
 
 
 
-async fn main_response_mapper(res: Response) -> Response {
+async fn main_response_mapper(
+    ctx: Option<Ctx>,
+    uri: Uri,
+    req_method: Method,
+    res: Response,
+) -> Response {
     println!("->> {:<12} - main_response_mapper", "RES_MAPPER");
     let uuid = Uuid::new_v4();
 
@@ -75,7 +83,11 @@ async fn main_response_mapper(res: Response) -> Response {
         });
 
 
-    println!("  ->> server log line - {uuid} - Error: {service_error:?}");
+    // Build and log the server log line.
+	let client_error = client_status_error.unzip().1;
+    
+	let _ = log_request(uuid, req_method, uri, ctx, service_error, client_error).await;
+
 
     println!();
 

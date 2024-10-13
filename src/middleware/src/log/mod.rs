@@ -7,7 +7,6 @@ use hyper::{client, service};
 use serde::Serialize;
 use serde_json::{json, Value};
 use serde_with::skip_serializing_none;
-// use tower_cookies::cookie::time::serde::timestamp;
 use uuid::Uuid;
 
 
@@ -44,17 +43,14 @@ pub async fn log_request(
         error_value: error_data,
     };
 
+    println!("  ->> log_request: \n{}", json!(log_line));
+
 
     // Integrate cloudwatch service here
 
 
     Ok(())
 }
-
-
-
-
-
 
 #[skip_serializing_none]
 #[derive(Serialize)]

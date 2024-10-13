@@ -2,8 +2,6 @@ use axum::{http::StatusCode, response::{IntoResponse, Response}};
 use serde::Serialize;
 
 
-
-
 pub type Result<T> = core::result::Result<T, Error>;
 
 #[derive(Clone, Debug, Serialize, strum_macros::AsRefStr)]
@@ -17,7 +15,7 @@ pub enum Error {
     AuthFailCtxNotInRequestExt,
 
     // Model errors
-    TicketDeleteFailIdNotFound{ id: u64 },
+    EhrDeleteFailIdNotFound{ id: u64 },
 }
 
 impl IntoResponse for Error {
@@ -48,7 +46,7 @@ impl Error {
                 (StatusCode::FORBIDDEN, ClientError::NO_AUTH)
             }
 
-            Self::TicketDeleteFailIdNotFound { .. } => {
+            Self::EhrDeleteFailIdNotFound { .. } => {
                 (StatusCode::BAD_REQUEST, ClientError::INVALID_PARAMS)
             }
 

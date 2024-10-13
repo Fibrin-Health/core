@@ -24,18 +24,18 @@ async fn quick_dev() -> Result<()> {
     req_login.await?.print().await?;
 
 
-    let req_create_ticket = hc.do_post(
-        "/api/tickets",
+    let req_create_ehr = hc.do_post(
+        "/api/ehrs",
         json!({
-            "title": "Ticket 1"
+            "title": "Ehr 1"
         })
     );
 
-    req_create_ticket.await?.print().await?;
+    req_create_ehr.await?.print().await?;
 
-    // hc.do_delete("/api/tickets/2").await?.print().await?;
+    // hc.do_delete("/api/ehrs/2").await?.print().await?;
 
-    hc.do_get("/api/tickets").await?.print().await?;
+    hc.do_get("/api/ehrs").await?.print().await?;
 
     Ok(())
 }

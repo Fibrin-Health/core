@@ -1,19 +1,49 @@
-# Fbrin Health - Decentralized EHR and AI Second Opinion Platform
+# Fbrin Health - Decentralized Healthcare Data Storage Protocol on Internet Computer
 
-Fibrin Lab is a fully decentralized, Web3-enabled Electronic Health Record (EHR) system built on the Internet Computer (IC) Protocol. It allows healthcare providers to securely access patient records directly from the blockchain via HTTP calls, while patients retain full ownership of their data.
+## Overview
 
-By integrating AI-powered diagnostic tools, doctors can also request second opinions based on clinical guidelines and medical research, all within a decentralized framework. Fibrin Lab leverages the IC Protocol's scalable infrastructure to ensure security, privacy, and seamless real-time access to health data.
+Fibrin Health is a decentralized protocol for securely storing and managing healthcare data using the Internet Computer (IC). This project consists of two main components:
 
-
-## Key Features
-
-
-## Development Roadmap
+  1. API Gateway (Rust): A bridge between external systems (e.g., healthcare providers' EHR systems) and the backend canisters.
+  2. Fibrin Health Backend Canister: Handles the secure storage, management, and permissions for patient healthcare data.
 
 
+1. API Gateway (Rust)
+
+The API Gateway is responsible for processing HTTP requests from external systems and forwarding them to the appropriate backend canister. It acts as the interface for healthcare providers and ensures secure communication between external systems and Fibrin Health’s decentralized infrastructure.
+
+### Key Features:
+
+    HTTP Outcalls: Communicates with local Electronic Health Records (EHRs) via API.
+    Data Validation: Ensures that all data being transferred to the backend canister is valid and secure.
+    Authentication: Authenticates requests from healthcare providers before forwarding them to the backend.
+
+### Usage:
+
+    Set up and configure the API Gateway by providing endpoint URLs for integration with existing healthcare systems.
+    Ensure proper authentication tokens are included in requests to ensure secure communication.
 
 
-## Running the project locally
+
+2. Fibrin Health Backend Canister
+
+The backend canister is the core of the Fibrin Health system. It stores patient medical records securely in IC canisters, managing data access, permissions, and encryption.
+
+### Key Features:
+
+    Decentralized Storage: Stores encrypted healthcare data for patients in a secure, decentralized manner.
+    Permissions Management: Patients control who can access their data through smart contract-based permissions.
+    Data Sync: Automatically syncs with local EHR systems when patients move or visit new healthcare providers.
+
+### Usage:
+
+    Deploy backend canisters for each patient to store and manage their healthcare data.
+    Manage access control using smart contracts to authorize healthcare providers.
+
+
+
+
+## Running the Cannister locally
 
 If you want to test your project locally, you can use the following commands:
 
