@@ -8,7 +8,8 @@ Fibrin Health is a decentralized protocol for securely storing and managing heal
   2. Fibrin Health Backend Canister: Handles the secure storage, management, and permissions for patient healthcare data.
 
 
-1. API Gateway (Rust)
+
+## API Gateway (Rust)
 
 The API Gateway is responsible for processing HTTP requests from external systems and forwarding them to the appropriate backend canister. It acts as the interface for healthcare providers and ensures secure communication between external systems and Fibrin Health’s decentralized infrastructure.
 
@@ -24,8 +25,7 @@ The API Gateway is responsible for processing HTTP requests from external system
     Ensure proper authentication tokens are included in requests to ensure secure communication.
 
 
-
-2. Fibrin Health Backend Canister
+## Fibrin Health Backend Canister
 
 The backend canister is the core of the Fibrin Health system. It stores patient medical records securely in IC canisters, managing data access, permissions, and encryption.
 
